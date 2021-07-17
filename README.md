@@ -29,6 +29,10 @@ To obtain API key please visit the [Google Developer Console](https://console.de
 
 You may use this Github branch as dependency in package.json
 
+```
+"quasar-vue-google-autocomplete": "git://github.com/haizad/vue-google-autocomplete.git",
+```
+
 ## Usage
 
 The Quasar + Vue Google Autocomplete works out of the box by just including it.
