@@ -184,20 +184,21 @@ Please note that you need to provide what method will listen (`v-on:placechanged
     <div>
         <h2>Your Address</h2>
 
-        <vue-google-autocomplete
+        <quasar-vue-google-autocomplete
             ref="address"
             id="map"
+            label="Location"
             classname="form-control"
             placeholder="Please type your address"
             v-on:placechanged="getAddressData"
             country="sg"
         >
-        </vue-google-autocomplete>
+        </quasar-vue-google-autocomplete>
     </div>
 </template>
 
 <script>
-    import VueGoogleAutocomplete from 'vue-google-autocomplete'
+    import VueGoogleAutocomplete from 'quasar-vue-google-autocomplete'
 
     export default {
         components: { VueGoogleAutocomplete },
@@ -234,7 +235,7 @@ Please note that you need to provide what method will listen (`v-on:placechanged
 The example below shows the correct usage of the `types` parameter, when limiting the search to cities:
 
 ```vue
-<vue-google-autocomplete
+<quasar-vue-google-autocomplete
     id="map2"
     ref="toAddress"
     classname="form-control"
@@ -243,5 +244,5 @@ The example below shows the correct usage of the `types` parameter, when limitin
     types="(cities)"
     country="us"
 >
-</vue-google-autocomplete>
+</quasar-vue-google-autocomplete>
 ```

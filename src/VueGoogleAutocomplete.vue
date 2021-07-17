@@ -62,7 +62,7 @@
 
           placeholder: {
             type: String,
-            default: 'Start typing'
+            default: ''
           },
 
           disabled: {

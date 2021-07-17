@@ -22,7 +22,7 @@
                 <a v-on:click="$refs.address.geolocate()">or force current location</a>
             </h3>
             <p class="control">
-                <vue-google-autocomplete
+                <quasar-vue-google-autocomplete
                     id="map"
                     ref="address"
                     classname="input"
@@ -31,7 +31,7 @@
                     v-on:error="handleError"
                     country="sg"
                 >
-                </vue-google-autocomplete>
+                </quasar-vue-google-autocomplete>
             </p>
 
             <div class="message is-success" v-show="address">
