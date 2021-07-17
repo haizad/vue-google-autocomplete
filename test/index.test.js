@@ -1,16 +1,16 @@
 import Vue from 'vue';
 import test from 'ava';
 import googleStub from './helpers/google_stub';
-import VueGoogleAutocomplete from '../src/VueGoogleAutocomplete.vue';
+import QuasarVueGoogleAutocomplete from '../src/QuasarVueGoogleAutocomplete.vue';
 
 window.google = global.google = googleStub();
 
 test('that it has a mounted hook', t => {
-    t.is(typeof VueGoogleAutocomplete.mounted, 'function');
+    t.is(typeof QuasarVueGoogleAutocomplete.mounted, 'function');
 });
 
 test('that it renders input', t => {
-    let Constructor = Vue.extend(VueGoogleAutocomplete);
+    let Constructor = Vue.extend(QuasarVueGoogleAutocomplete);
 
     let vm = new Constructor({ propsData: {
         'id': 'map'
@@ -21,7 +21,7 @@ test('that it renders input', t => {
 });
 
 test('that it renders proper props', t => {
-    let Constructor = Vue.extend(VueGoogleAutocomplete);
+    let Constructor = Vue.extend(QuasarVueGoogleAutocomplete);
 
     let vm = new Constructor({ propsData: {
         'id': 'map',

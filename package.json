@@ -2,7 +2,7 @@
   "name": "quasar-vue-google-autocomplete",
   "version": "1.1.1",
   "description": "Quasar + Vue component to Google Places Autocomplete",
-  "main": "src/VueGoogleAutocomplete.vue",
+  "main": "src/QuasarVueGoogleAutocomplete.vue",
   "homepage": "https://github.com/haizad/vue-google-autocomplete",
   "repository": {
     "type": "git",

@@ -1,10 +1,10 @@
 import Vue from 'vue';
-import VueGoogleAutocomplete from './../../src/VueGoogleAutocomplete.vue';
+import QuasarVueGoogleAutocomplete from './../../src/QuasarVueGoogleAutocomplete.vue';
 
 const app = new Vue({
     el: '#app',
 
-    components: { VueGoogleAutocomplete },
+    components: { QuasarVueGoogleAutocomplete },
 
     data: {
         address: ''

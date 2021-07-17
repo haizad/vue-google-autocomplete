@@ -46,7 +46,7 @@
         'utc_offset_minutes', 'vicinity'];
 
     export default {
-        name: 'VueGoogleAutocomplete',
+        name: 'QuasarVueGoogleAutocomplete',
 
         props: {
           id: {
