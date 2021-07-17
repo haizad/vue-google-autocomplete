@@ -1,20 +1,11 @@
-# Vue Google Autocomplete
+# Quasar + Vue Google Autocomplete
 
 A Vue.js (2.x) autosuggest component for the Google Maps Places API.
 
-## Demo
+## Credits
 
-Live demo: [olefirenko.github.io/vue-google-autocomplete](https://olefirenko.github.io/vue-google-autocomplete/)
-
-## Benefits
-
-I have tried to use different Vue Google Autocomplete components, but did not find any that would solve my needs. So below I would like to mention what you can get from this exact component:
-
-* Load more than one autocompletion inputs (I could not achieve this with existing vue components)
-* Getting geolocation data (latitude, longitude) for found address object along with other address data (country, city, state, county, street, house number, zip code). So no need to do additional geocode request on backend side.
-* No external dependencies
-* You can get access to underlying [PlaceResult object](https://developers.google.com/maps/documentation/javascript/reference#PlaceResult) to get more details about found location. You are able to specify the specific fields you want to fetch from the PlaceResult object.
-* You can limit results to specific country or use users geolocation data
+Thank you to Olefirenko for making Vue Google Autocomplete. I just added some work to ensure it can 
+https://github.com/olefirenko/vue-google-autocomplete
 
 ## Installation
 
@@ -35,36 +26,29 @@ This component uses Google Maps Places API to get geo suggests for autocompletio
 
 To obtain API key please visit the [Google Developer Console](https://console.developers.google.com). The API's that you have to enable in your Google API Manager Dashboard are [Google Maps Geocoding API](https://developers.google.com/maps/documentation/geocoding/start), [Google Places API Web Service](https://developers.google.com/places/web-service/) and [Google Maps Javascript API](https://developers.google.com/maps/documentation/javascript/).
 
-The easiest way to use Vue Google Autocomplete is to install it from **npm** or **yarn**.
+## Installation
 
-```sh
-npm install vue-google-autocomplete --save
-```
-
-Or
-
-```sh
-yarn add vue-google-autocomplete
-```
+You may use this Github branch as dependency in package.json
 
 ## Usage
 
-The Vue Google Autocomplete works out of the box by just including it.
+The Quasar + Vue Google Autocomplete works out of the box by just including it.
 
 ```js
-import VueGoogleAutocomplete from 'vue-google-autocomplete'
+import VueGoogleAutocomplete from 'quasar-vue-google-autocomplete'
 
 ```
 
 In your template you can use this syntax:
 ```html
-<vue-google-autocomplete
+<quasar-vue-google-autocomplete
     id="map"
+    label="lokasi"
     classname="form-control"
     placeholder="Start typing"
     v-on:placechanged="getAddressData"
 >
-</vue-google-autocomplete>
+</quasar-vue-google-autocomplete>
 ```
 
 ### Properties
@@ -73,6 +57,11 @@ In your template you can use this syntax:
 Type: `String`
 
 `required` ID for the input container.
+
+#### label
+Type: `String`
+
+`required` Label for the input container.
 
 #### classname
 Type: `String`
@@ -96,7 +85,7 @@ You may find [this example](#correct-usage-of-the-types-parameter) helpful.
 
 #### fields
 Type: `Array`
-Default: `['address_components', 'adr_address', 'alt_id', 'formatted_address', 'geometry', 'icon', 'id', 'name', 'permanently_closed', 'photo', 'place_id', 'scope', 'type', 'url', 'utc_offset', 'vicinity']`
+Default: `['address_components', 'adr_address', 'alt_id', 'formatted_address', 'geometry', 'icon', 'id', 'name', 'business_status', 'photo', 'place_id', 'scope', 'type', 'url', 'utc_offset_minutes', 'vicinity']`
 
 Set which data fields to return in the PlaceResult from the Google Autocomplete API when the user selects a place. [Google Autocomplete API by default returns all available data fields](https://developers.google.com/maps/documentation/javascript/places-autocomplete#get_place_information) for the selected place, which may result in additional charges and thus the API users might pay for data they don't need. This package sets a sensible default for the fields value, fetching only the Basic Data fields which do not result in any additional charges. If you want to fetch other fields in addition to the default ones, make sure that the array you pass in to the `fields` prop contains the default fields listed above, and not only the additional fields you want to fetch.
 

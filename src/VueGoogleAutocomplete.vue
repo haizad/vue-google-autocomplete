@@ -1,17 +1,20 @@
 <template>
-    <input
-        ref="autocomplete"
-        type="text"
-        :class="classname"
-        :id="id"
-        :placeholder="placeholder"
-        :disabled="disabled"
-        v-model="autocompleteText"
-        @focus="onFocus()"
-        @blur="onBlur()"
-        @change="onChange"
-        @keypress="onKeyPress"
-        @keyup="onKeyUp"
+    <q-input 
+      rounded 
+      outlined 
+      :label="label" 
+      ref="autocomplete"
+      type="text"
+      :class="classname"
+      :id="id"
+      :placeholder="placeholder"
+      :disabled="disabled"
+      v-model="autocompleteText"
+      @focus="onFocus()"
+      @blur="onBlur()"
+      @change="onChange"
+      @keypress="onKeyPress"
+      @keyup="onKeyUp"
     />
 </template>
 
@@ -39,14 +42,18 @@
     */
     const BASIC_DATA_FIELDS = ['address_components', 'adr_address', 'alt_id', 
         'formatted_address', 'geometry', 'icon', 'id', 'name', 
-        'permanently_closed', 'photo', 'place_id', 'scope', 'type', 'url', 
-        'utc_offset', 'vicinity'];
+        'business_status', 'photo', 'place_id', 'scope', 'type', 'url', 
+        'utc_offset_minutes', 'vicinity'];
 
     export default {
         name: 'VueGoogleAutocomplete',
 
         props: {
           id: {
+            type: String,
+            required: true
+          },
+          label: {
             type: String,
             required: true
           },
