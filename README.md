@@ -4,8 +4,7 @@ A Vue.js (2.x) autosuggest component for the Google Maps Places API.
 
 ## Credits
 
-Thank you to Olefirenko for making Vue Google Autocomplete. I just added some work to ensure it can 
-https://github.com/olefirenko/vue-google-autocomplete
+Thank you to Olefirenko for making Vue Google Autocomplete. I just added some work to ensure it implement quasar input style. You can refer the original Vue Google Autocomplete here -> https://github.com/olefirenko/vue-google-autocomplete
 
 ## Installation
 
